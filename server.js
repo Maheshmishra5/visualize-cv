@@ -23,6 +23,7 @@ const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET || "";
 const isCloudinaryReady = Boolean(CLOUDINARY_CLOUD_NAME && CLOUDINARY_API_KEY && CLOUDINARY_API_SECRET);
 
 if (!fs.existsSync(UPLOAD_DIR)) fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+if (!fs.existsSync(path.dirname(DB_PATH))) fs.mkdirSync(path.dirname(DB_PATH), { recursive: true });
 if (!fs.existsSync(DB_PATH)) fs.writeFileSync(DB_PATH, JSON.stringify({ users: [], resumes: [] }, null, 2), "utf-8");
 
 const readDb = () => JSON.parse(fs.readFileSync(DB_PATH, "utf-8"));
