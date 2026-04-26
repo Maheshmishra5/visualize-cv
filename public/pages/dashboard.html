@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualize CV | Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-animated">
+    <header class="top-nav">
+      <h1>Visualize CV</h1>
+      <nav>
+        <a href="/dashboard" class="nav-link active">Dashboard</a>
+        <a href="/builder" class="nav-link">Build Resume</a>
+        <a href="/history" class="nav-link">History</a>
+        <button id="logoutBtn" class="btn-danger">Logout</button>
+      </nav>
+    </header>
+
+    <main class="page-container fade-in">
+      <section class="hero glass-card">
+        <h2 id="welcomeText">Welcome</h2>
+        <p>Create professional resumes with modern templates and smart analysis.</p>
+        <a href="/builder" class="btn-primary inline-btn">Create New Resume</a>
+      </section>
+
+      <section class="grid-3">
+        <article class="glass-card stat-card">
+          <h3>Total Resumes</h3>
+          <p id="totalResumes">0</p>
+        </article>
+        <article class="glass-card stat-card">
+          <h3>Best Score</h3>
+          <p id="bestScore">0</p>
+        </article>
+        <article class="glass-card stat-card">
+          <h3>Templates</h3>
+          <p>9+</p>
+        </article>
+      </section>
+
+      <section class="glass-card">
+        <h3>Recent Resumes</h3>
+        <div id="recentResumes" class="list-grid"></div>
+      </section>
+    </main>
+
+    <script src="/js/ui-effects.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+  </html>

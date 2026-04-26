@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualize CV | Landing</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-animated">
+    <header class="top-nav">
+      <h1>Visualize CV</h1>
+      <nav>
+        <a href="/auth" class="nav-link">Login</a>
+        <a href="/auth?mode=register" class="btn-primary inline-btn">Register</a>
+      </nav>
+    </header>
+
+    <main class="page-container fade-in">
+      <section class="glass-card hero">
+        <h2>Create ATS-ready resumes in minutes</h2>
+        <p>
+          Visualize CV helps you design modern resumes with 9+ templates, live preview, photo support, analyzer scoring,
+          AI suggestions, font customization, drag-and-drop section ordering, and PDF export.
+        </p>
+        <div class="actions">
+          <a href="/auth?next=/builder" class="btn-primary inline-btn">Create Resume</a>
+          <a href="/auth?next=/builder%3Fanalyze%3D1" class="btn-secondary inline-btn">Analyze Resume</a>
+        </div>
+      </section>
+
+      <section class="grid-3">
+        <article class="glass-card">
+          <h3>Template Gallery</h3>
+          <p>Choose from 9 visual styles with one click and real-time preview updates.</p>
+        </article>
+        <article class="glass-card">
+          <h3>Smart Guidance</h3>
+          <p>Get instant analyzer score and optional live AI suggestions from OpenAI.</p>
+        </article>
+        <article class="glass-card">
+          <h3>Export & Reuse</h3>
+          <p>Save history, edit any version, reorder sections, and export to PDF anytime.</p>
+        </article>
+      </section>
+    </main>
+    <script src="/js/ui-effects.js"></script>
+    <script src="/js/landing.js"></script>
+  </body>
+</html>

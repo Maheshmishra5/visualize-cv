@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualize CV | History</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="bg-animated">
+    <header class="top-nav">
+      <h1>Visualize CV</h1>
+      <nav>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="/builder" class="nav-link">Build Resume</a>
+        <a href="/history" class="nav-link active">History</a>
+        <button id="logoutBtn" class="btn-danger">Logout</button>
+      </nav>
+    </header>
+
+    <main class="page-container fade-in">
+      <section class="glass-card">
+        <h2>Creation History</h2>
+        <p>See all resumes you have created and continue editing any version.</p>
+      </section>
+      <section id="historyList" class="list-grid"></section>
+    </main>
+
+    <script src="/js/ui-effects.js"></script>
+    <script src="/js/history.js"></script>
+  </body>
+  </html>

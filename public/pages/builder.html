@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualize CV | Builder</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  </head>
+  <body class="bg-animated">
+    <header class="top-nav">
+      <h1>Visualize CV</h1>
+      <nav>
+        <a href="/dashboard" class="nav-link">Dashboard</a>
+        <a href="/builder" class="nav-link active">Build Resume</a>
+        <a href="/history" class="nav-link">History</a>
+        <button id="logoutBtn" class="btn-danger">Logout</button>
+      </nav>
+    </header>
+
+    <main class="builder-layout fade-in">
+      <section class="builder-form glass-card">
+        <h2>Resume Builder</h2>
+        <div class="wizard-top">
+          <div id="wizardSteps" class="wizard-steps"></div>
+          <div class="wizard-progress-track">
+            <div id="wizardProgressBar" class="wizard-progress-bar"></div>
+          </div>
+        </div>
+
+        <section class="wizard-panel" data-step="0">
+          <h3>Step 1: Personal Details</h3>
+          <div class="form-grid">
+            <div>
+              <label>Name</label>
+              <input id="name" />
+            </div>
+            <div>
+              <label>Role Title</label>
+              <input id="title" />
+            </div>
+            <div>
+              <label>Email</label>
+              <input id="email" />
+            </div>
+            <div>
+              <label>Phone</label>
+              <input id="phone" />
+            </div>
+            <div>
+              <label>Location</label>
+              <input id="location" />
+            </div>
+            <div>
+              <label>Font Style</label>
+              <select id="fontFamily">
+                <option>Inter</option>
+                <option>Poppins</option>
+                <option>Roboto</option>
+                <option>Georgia</option>
+                <option>Verdana</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section class="wizard-panel hidden" data-step="1">
+          <h3>Step 2: Summary & Skills</h3>
+          <div class="stack">
+            <label>Summary</label>
+            <textarea id="summary" rows="4"></textarea>
+          </div>
+          <div class="stack">
+            <label>Skills (comma separated)</label>
+            <textarea id="skills" rows="2"></textarea>
+          </div>
+        </section>
+
+        <section class="wizard-panel hidden" data-step="2">
+          <h3>Step 3: Experience & Education</h3>
+          <div class="stack">
+            <label>Experience (one per line: Company | Role | Highlights separated by ; )</label>
+            <textarea id="experience" rows="4"></textarea>
+          </div>
+          <div class="stack">
+            <label>Education (one per line: Institute | Degree | Year)</label>
+            <textarea id="education" rows="3"></textarea>
+          </div>
+          <div class="stack">
+            <label>Projects (one per line)</label>
+            <textarea id="projects" rows="3"></textarea>
+          </div>
+        </section>
+
+        <section class="wizard-panel hidden" data-step="3">
+          <h3>Step 4: Design & Photo</h3>
+          <div class="form-grid">
+            <div>
+              <label>Template</label>
+              <select id="templateId"></select>
+            </div>
+            <div>
+              <label>Photo</label>
+              <input id="photo" type="file" accept="image/*" />
+            </div>
+          </div>
+          <div id="templateThumbs" class="template-thumbs"></div>
+          <div class="stack">
+            <label>Section Order (drag to reorder)</label>
+            <ul id="sectionOrderList" class="order-list"></ul>
+          </div>
+        </section>
+
+        <section class="wizard-panel hidden" data-step="4">
+          <h3>Step 5: Review & Finalize</h3>
+          <p>Analyze your resume, generate AI suggestions, save progress, and export PDF.</p>
+          <div class="actions">
+            <button id="saveBtn" class="btn-primary">Save Resume</button>
+            <button id="analyzeBtn" class="btn-secondary">Analyze Resume</button>
+            <button id="aiBtn" class="btn-secondary">Get AI Suggestions</button>
+            <button id="pdfBtn" class="btn-secondary">Export PDF</button>
+            <button id="docxBtn" class="btn-secondary">Export DOCX</button>
+          </div>
+          <div id="analysisBox" class="glass-card mini-card hidden"></div>
+          <div id="aiBox" class="glass-card mini-card hidden"></div>
+        </section>
+
+        <div class="wizard-actions">
+          <button id="prevStepBtn" class="btn-secondary">Previous</button>
+          <button id="nextStepBtn" class="btn-primary">Next Step</button>
+        </div>
+      </section>
+
+      <section class="builder-preview glass-card">
+        <h3>Live Preview</h3>
+        <div id="preview" class="resume-preview"></div>
+      </section>
+    </main>
+
+    <script src="/js/ui-effects.js"></script>
+    <script src="/js/builder.js"></script>
+  </body>
+  </html>
